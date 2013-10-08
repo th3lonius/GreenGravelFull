@@ -1,0 +1,604 @@
+/*
+Title: Screen styles
+Author: Matthew Mesaros (mesaros.creative@gmail.com)
+*/
+
+/* =reset
+----------------------------------------------- */
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+    list-style: none;
+    font-size: 100%;
+    font-style: normal;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img { max-width: 100%; }
+
+/* =reusable classes
+----------------------------------------------- */
+
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.group { display: inline-block; }
+
+/* Hides from IE-mac \*/
+* html .group { height: 1%; } /* IE6 */
+*:first-child+html .group { min-height: 1px; } /* IE7 */
+/* End hide from IE-mac */
+
+.amp {
+    font-family: Baskerville,"Goudy Old Style",Palatino,"Book Antiqua",Constantia,Georgia,serif;
+    font-style: italic;
+}
+
+/* =links
+----------------------------------------------- */
+
+a:link, a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFF;
+}
+
+/* =page layout
+----------------------------------------------- */
+
+body {
+    background: url(../img/theater_proofed.jpg) 0 0 no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    color: #333;
+    font-family: "museo-slab";
+    font-size: 100%;
+    height: 100%;
+    line-height: 1.45;
+    width: 100%;
+}
+
+#container {
+    left: 0;
+    position: relative;
+    right: 0;
+    width: 100%;
+}
+
+#wrapper {
+    background: #FFF;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+}
+
+section {
+    text-align: center;
+    width: 100%;
+}
+
+section article {
+    margin: 0 auto;
+    max-width: 72em;
+    padding: 70px;
+    text-align: left;
+}
+
+section p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+h3 {
+    border-left: 4px solid rgba(135,182,25,0.9);
+    color: 333;
+    font-family: "komu-a";
+    font-size: 3em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    margin-left: -44px;
+    padding-left: 40px;
+    text-transform: uppercase;
+}
+
+h4 {
+    border-left: 3px double rgba(135,182,25,0.9);
+    font-family: "komu-a";
+    font-size: 2.5em;
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0.5em;
+    margin-left: -24px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.col-1 {
+    float: left;
+    width: 48%;
+}
+
+.col-2 {
+    float: right;
+    width: 48%;
+}
+
+/* =NAVIGATION
+----------------------------------------------- */
+nav {
+    height: 60px;
+    text-align: center;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    border-bottom: 2px solid transparent;
+    color: #FFF;
+    display: inline-block;
+    font-family: "komu-a";
+    font-size: 1.25em;
+    font-weight: normal;
+    height: 100%;
+    padding: 25px;
+    width: 100%;
+    -webkit-transition: all ease 1s;
+}
+
+#navScroll {
+    background: rgba(51,51,50,0.9);
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+}
+
+#navScroll ul li a {
+    color: #FFF;
+    line-height: 1;
+}
+
+#navScroll ul li a:hover {
+    background: #FFF;
+    color: #333332;
+}
+
+#navMain {
+    margin-top: 10px;
+}
+
+#navMain ul li a {
+    padding: 10px 25px;
+}
+
+#navMain ul li a:hover {
+    border-bottom: 2px solid #FFF;
+}
+
+.current {
+    border-bottom: 2px solid #FFF;
+}
+
+/* =HEADER
+----------------------------------------------- */
+/*
+@-webkit-keyframes colorPulse{
+    0% { background-color: rgba(21,163,70,0.5); }
+    12.5% { background-color: rgba(161,232,126,0.5); }
+    25% { background-color: rgba(136,255,187,0.5); }
+    37.5% { background-color: rgba(253,255,179,0.5); }
+    50% { background-color: rgba(136,232,227,0.5); }
+    62.5% { background-color: rgba(101,173,255,0.5); }
+    75% { background-color: rgba(135,182,25,0.5); }
+    87.5% { background-color: rgba(42,166,66,0.5); }
+    100% { background-color: rgba(142,170,87,0.5); }
+}
+*/
+
+header {
+    background-color: rgba(0,166,81,0.5);
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    -webkit-animation: colorPulse 20s infinite alternate;
+}
+
+#patternWrap {
+    background: url(../img/blu_stripes.png) repeat 0 0 transparent;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+
+#headline {
+    color: #FFF;
+    display: block;
+    font-family: "komu-a";
+    font-size: 20em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-top: 20px;
+    position: fixed;
+    text-align: center;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#headline time::before {
+    content: "on";
+    font-family: "komu-a";
+    font-size: 0.3em;
+    position: relative;
+    right: 20px;
+    top: 15px;
+    vertical-align: top;
+}
+
+#headline time {
+    display: block;
+    font-size: 0.75em;
+    position: relative;
+}
+
+#headline h2::before {
+    content: "the";
+    font-family: "komu-a";
+    font-size: 0.2em;
+    position: relative;
+    right: 20px;
+    text-shadow: 1px 0px 0px rgba(0,0,0,0.4);
+    top: 25px;
+    vertical-align: top;
+}
+
+#headline h2 {
+    border-bottom: 2px solid #FFF;
+    border-top: 2px solid #FFF;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 1.1em;
+    position: relative;
+    text-shadow: 4px 0px 0px rgba(0,0,0,0.3);
+}
+
+#headline p::before {
+    content: "makes";
+    font-family: "komu-a";
+    font-size: 0.2em;
+    position: relative;
+    right: 20px;
+    top: 22px;
+    vertical-align: top;
+}
+
+#headline p {
+    position: relative;
+}
+
+#headline address {
+    font-size: 0.75em;
+}
+
+#headline address::before, #headline address::after {
+    content: "=";
+    display: inline-block;
+    margin: 0 1em;
+    -webkit-transform: scaleX(5);
+}
+
+header #branding {
+    position: relative;
+    top: -10%;
+    width: 100px;
+}
+
+header #logotype {
+    bottom: 50px;
+    position: fixed;
+    right: 50px;
+    width: 200px;
+}
+
+.icon img { width: 60px; }
+    
+a.icon {
+    bottom: 40px;
+    display: inline-block;
+    padding: 10px;
+    position: fixed;
+    z-index: 10000;
+}
+    
+a.icon:hover {
+    -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* =SOCIAL
+----------------------------------------------- */
+
+#twitter {
+    right: 40px;
+}
+
+#facebook {
+    right: 120px;
+}
+
+
+/* =CONTENT
+----------------------------------------------- */
+
+#content {
+    background: rgba(255,255,255,0.99);
+    width: 100%;
+}
+
+
+/* =ABOUT
+----------------------------------------------- */
+
+#about p {
+    margin: 1em 0;
+}
+
+#breakdown {
+    display: inline-block;
+}
+
+.venue {
+    width: 48%;
+}
+
+.venue:last-child {
+    margin-right: 0;
+}
+
+.venuePhoto {
+    color: rgba(255,255,255,0.8);
+    font-family: "komu-a";
+    font-size: 3em;
+    line-height: 1;
+    padding: 40px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+#wieting {
+    float: left;
+}
+
+#bumblebees {
+    float: right;
+}
+
+#wieting .venuePhoto {
+    background-image: url(../img/venue_wieting.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bumblebees .venuePhoto {
+    background-image: url(../img/venue_bumblebees.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 225px;
+    text-align: left;
+}
+
+/* =TICKETS
+----------------------------------------------- */
+
+#tickets div {
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+    color: #FFF;
+    display: inline-block;
+    height: 260px;
+    margin-right: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+}
+
+#tickets h3 {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+#ticketSingle {
+    background: #999;
+}
+
+#ticketDay {
+    background: #666;
+}
+
+#ticketWeek {
+    background: #333;
+}
+
+
+/* =STAFF
+----------------------------------------------- */
+
+#staff {
+    background-image: url(../img/wheels.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #FFF;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.overlayWrapper {
+    background: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+}
+
+#staff blockquote {
+    display: none;
+    font-size: 2em;
+    font-weight: 100;
+    line-height: 1.2;
+    margin: 1em 0;
+    width: 70%;
+}
+
+#staff blockquote em {
+    font-weight: 900;
+}
+
+.staffMember {
+    display: inline-block;
+    padding-right: 1em;
+    position: relative;
+    text-align: center;
+    width: 33%;
+}
+
+.staffMember h5 {
+    text-transform: uppercase;
+}
+
+.staffMember p {
+    display: none;
+    height: 394px;
+    left: 320px;
+    position: absolute;
+    right: -600px;
+    top: 0;
+    text-align: left;
+    width: 600px;
+}
+
+.staffPhoto {
+    cursor: pointer;
+    display: inline-block;
+    height: 394px;
+    margin-bottom: 1em;
+    width: 300px;
+}
+
+#keeler .staffPhoto {
+    background: url(../img/staff_keeler.jpg) no-repeat center;
+}
+
+#mesaros .staffPhoto {
+    background: url(../img/staff_mesaros.jpg) no-repeat center;
+}
+
+#watkins .staffPhoto {
+    background: url(../img/staff_watkins.jpg) no-repeat center;
+}
+
+#staff img {
+
+}
+
+/* =CONTACT
+----------------------------------------------- */
+
+#contact {
+    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
+}
+
+#contact article {
+    color: rgba(255,255,255,0.9);
+}
+
+#contact p {
+    float: left;
+    margin-right: 2em;
+    width: 60%;
+}
+
+#contact ul {
+    float: left;
+}
+
+
+@media only screen
+and (min-width: 200px)
+and (max-width: 700px) {
+    
+    section article {
+        padding: 30px;
+    }
+    
+    #headline span {
+        display: block;
+    }
+    
+    #headline span, #headline address {
+        font-size: 3em;
+    }
+    
+    
+    
+}
+    
+
+    
+
+    
+    
+    
+
+
+
+@media only screen
+and (min-width: 1024px) {
+
+    body { background-size: cover; }
+    
+
+    
+}
