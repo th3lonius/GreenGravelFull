@@ -85,27 +85,35 @@ $(document).ready(function() {
     });    
 
 /*----- STAFF SECTION -----*/
+    
+$('#mesaros, #keeler, #watkins').click(function(event){
+    xCoord = $(this).position().left - 70;
+    console.log(xCoord);
+    
+    $(this).animate({
+        right: xCoord
+    }, 200);
 
-$('#keeler .staffPhoto').click(function(){
-    $('#keeler p').fadeToggle('fast');
-    $('#mesaros').fadeToggle('slow');
-    $('#watkins').fadeToggle('slow');
+    $(this).children('p').fadeToggle('fast');
+    
+    if (xCoord) {
+        
+    $(this).siblings().animate({
+        opacity: 0
+    }, 'fast', 'linear');
+        
+    } else {
+        
+    $(this).siblings().animate({
+        opacity: 1
+    }, 'fast', 'linear');
+        
+    }
+
     return false;
 });
     
-$('#mesaros .staffPhoto').click(function(){
-    $('#mesaros p').fadeToggle('fast');
-    $('#watkins').fadeToggle('slow');
-    $('#keeler').fadeToggle('slow');
-    return false;
-});
-    
-$('#watkins .staffPhoto').click(function(){
-    $('#watkins p').fadeToggle('fast');
-    $('#mesaros').fadeToggle('slow');
-    $('#keeler').fadeToggle('slow');
-    return false;
-});
+
     
 $(document).click(function() {
     $('.staffMember p').fadeOut('fast');
