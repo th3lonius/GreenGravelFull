@@ -117,30 +117,28 @@ section p {
     margin-bottom: 1em;
 }
 
+h1, h2, h3 {
+    font-family: "proxima-nova";
+}
+
 h3 {
-    border-left: 4px solid rgba(135,182,25,0.9);
     color: 333;
-    font-family: "komu-a";
-    font-size: 3em;
-    font-weight: normal;
+    font-size: 1.5em;
+    font-weight: 100;
     letter-spacing: 1px;
     line-height: 1;
-    margin-bottom: 0.5em;
-    margin-left: -44px;
-    padding-left: 40px;
+    margin-bottom: 1em;
+    text-align: center;
     text-transform: uppercase;
 }
 
-h4 {
-    border-left: 3px double rgba(135,182,25,0.9);
-    font-family: "komu-a";
-    font-size: 2.5em;
-    font-weight: normal;
-    line-height: 1;
-    margin-bottom: 0.5em;
-    margin-left: -24px;
-    padding-left: 20px;
-    text-transform: uppercase;
+h3::before, h3::after {
+    content: "=";
+    display: inline-block;
+    margin: 0 2em;
+    -webkit-transform: scaleX(8);
+    -moz-transform: scaleX(8);
+    transform: scaleX(8);
 }
 
 .col-1 {
@@ -168,7 +166,7 @@ nav ul li a {
     border-bottom: 2px solid transparent;
     color: #FFF;
     display: inline-block;
-    font-family: "komu-a";
+    font-family: "proxima-nova";
     font-size: 1.25em;
     font-weight: normal;
     height: 100%;
@@ -179,6 +177,8 @@ nav ul li a {
 
 #navScroll {
     background: rgba(51,51,50,0.9);
+    border-bottom: 4px solid rgba(0,0,0,0.3);
+    display: none;
     left: 0;
     position: fixed;
     top: 0;
@@ -192,7 +192,7 @@ nav ul li a {
 }
 
 #navScroll ul li a:hover {
-    background: #FFF;
+    background: rgba(135,182,25,0.9);
     color: #333332;
 }
 
@@ -206,6 +206,7 @@ nav ul li a {
 
 #navMain ul li a:hover {
     border-bottom: 2px solid #FFF;
+    border-bottom-width: 100%;
 }
 
 .current {
@@ -229,17 +230,15 @@ nav ul li a {
 */
 
 header {
-    background-color: rgba(0,166,81,0.5);
+    background-color: rgba(0,161,75,0.3);
     height: 100vh;
     margin: 0 auto;
     position: relative;
-    text-align: center;
+    text-align: left;
     width: 100%;
-    -webkit-animation: colorPulse 20s infinite alternate;
 }
 
 #patternWrap {
-    background: url(../img/blu_stripes.png) repeat 0 0 transparent;
     bottom: 0;
     top: 0;
     left: 0;
@@ -251,38 +250,39 @@ header {
 #headline {
     color: #FFF;
     display: block;
-    font-family: "komu-a";
-    font-size: 20em;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-family: "proxima-nova";
     line-height: 1;
-    margin-top: 20px;
+    margin-top: 50px;
     position: fixed;
     text-align: center;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
     text-transform: uppercase;
+    vertical-align: middle;
     width: 100%;
 }
 
 #headline time::before {
     content: "on";
-    font-family: "komu-a";
-    font-size: 0.3em;
+    font-family: "proxima-nova";
+    font-size: 0.25em;
+    font-weight: 900;
     position: relative;
     right: 20px;
-    top: 15px;
+    top: 12px;
     vertical-align: top;
 }
 
 #headline time {
     display: block;
-    font-size: 0.75em;
+    font-size: 0.5em;
+    font-weight: 100;
     position: relative;
+    width: 100%;
 }
 
 #headline h2::before {
     content: "the";
-    font-family: "komu-a";
+    font-family: "proxima-nova";
     font-size: 0.2em;
     position: relative;
     right: 20px;
@@ -295,35 +295,41 @@ header {
     border-bottom: 2px solid #FFF;
     border-top: 2px solid #FFF;
     display: inline-block;
-    font-weight: 100;
-    font-size: 1.1em;
+    font-weight: 900;
+    line-height: 0.8;
+    padding: 14px 0;
     position: relative;
-    text-shadow: 4px 0px 0px rgba(0,0,0,0.3);
+    text-shadow: -8px 6px 0px rgba(0,0,0,0.2);
+    width: 80%;
 }
 
 #headline p::before {
     content: "makes";
-    font-family: "komu-a";
-    font-size: 0.2em;
+    font-family: "proxima-nova";
+    font-size: 0.25em;
     position: relative;
     right: 20px;
-    top: 22px;
+    top: 12px;
     vertical-align: top;
 }
 
 #headline p {
+    font-size: 0.5em;
+    font-weight: 800;
     position: relative;
+    right: 22px;
 }
 
 #headline address {
-    font-size: 0.75em;
+    font-size: 0.4em;
+    font-weight: 100;
 }
 
 #headline address::before, #headline address::after {
     content: "=";
     display: inline-block;
-    margin: 0 1em;
-    -webkit-transform: scaleX(5);
+    margin: 0 2em;
+    -webkit-transform: scaleX(8);
 }
 
 header #branding {
@@ -339,14 +345,17 @@ header #logotype {
     width: 200px;
 }
 
+header .icon {
+    bottom: 40px;
+    position: fixed;
+    z-index: 10;
+}
+
 .icon img { width: 60px; }
     
 a.icon {
-    bottom: 40px;
     display: inline-block;
     padding: 10px;
-    position: fixed;
-    z-index: 10000;
 }
     
 a.icon:hover {
@@ -399,8 +408,9 @@ a.icon:hover {
 
 .venuePhoto {
     color: rgba(255,255,255,0.8);
-    font-family: "komu-a";
+    font-family: "proxima-nova";
     font-size: 3em;
+    font-weight: 100;
     line-height: 1;
     padding: 40px;
     text-align: right;
@@ -479,7 +489,9 @@ a.icon:hover {
 
 #staff article {
     margin: 0 auto;
+    overflow: hidden;
     position: relative;
+    text-align: center;
 }
 
 .overlayWrapper {
@@ -503,50 +515,42 @@ a.icon:hover {
 
 .staffMember {
     display: inline-block;
-    padding-right: 1em;
+    margin-right: 20px;
     position: relative;
     text-align: center;
-    width: 33%;
+}
+
+.staffMember:last-child {
+    margin-right: 0;
 }
 
 .staffMember h5 {
     text-transform: uppercase;
 }
 
-.staffMember p {
+.staffBio {
     display: none;
-    height: 394px;
-    left: 320px;
-    position: absolute;
-    right: -600px;
-    top: 0;
+    margin: 40px auto 0;
     text-align: left;
-    width: 600px;
+    width: 80%;
 }
 
 .staffPhoto {
-    cursor: pointer;
     display: inline-block;
-    height: 394px;
-    margin-bottom: 1em;
-    width: 300px;
+    cursor: pointer;
 }
 
-#keeler .staffPhoto {
-    background: url(../img/staff_keeler.jpg) no-repeat center;
-}
-
-#mesaros .staffPhoto {
-    background: url(../img/staff_mesaros.jpg) no-repeat center;
-}
-
-#watkins .staffPhoto {
-    background: url(../img/staff_watkins.jpg) no-repeat center;
-}
-
-#staff img {
+.staffMember ul {
 
 }
+
+.staffMember .icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 900px;
+}
+
 
 /* =CONTACT
 ----------------------------------------------- */
@@ -569,6 +573,15 @@ a.icon:hover {
     float: left;
 }
 
+#contact .icon {
+    position: absolute;
+}
+
+@media only screen
+and (max-width: 600px) {
+
+}
+
 
 @media only screen
 and (min-width: 200px)
@@ -576,6 +589,11 @@ and (max-width: 700px) {
     
     section article {
         padding: 30px;
+    }
+    
+    header img {
+        margin-top: 2em;
+        padding: 0 2em;
     }
     
     #headline span {
@@ -586,6 +604,22 @@ and (max-width: 700px) {
         font-size: 3em;
     }
     
+    .staffMember {
+        display: block;
+        margin: 0 auto;
+        padding-right: 0;
+        width: 80%;
+    }
+    
+    .venue {
+        width: 100%;
+    }
+    
+    #navMain {
+        display: none;
+    }
+    
+
     
     
 }

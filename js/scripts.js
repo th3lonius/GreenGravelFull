@@ -6,9 +6,9 @@ $(document).ready(function() {
     
 		if ($(window).width() >= 720) {
 
-			window_scroll = $(this).scrollTop();
+			winScroll = $(this).scrollTop();
 
-			if (window_scroll > $('header').height()) {
+			if (winScroll > $('header').height() - 1) {
 
 				$('#navScroll').slideDown('slow');
                 
@@ -62,8 +62,8 @@ $(document).ready(function() {
     var scroll_pos = 0;
     var animation_begin_pos = 0; //where you want the animation to begin
     var animation_end_pos = 1000; //where you want the animation to stop
-    var beginning_color = new $.Color( 'rgba(0,166,81,0.4)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
-    var ending_color = new $.Color( 'rgba(50,97,3,0.99)' ); ;//what color we want to use in the end
+    var beginning_color = new $.Color( 'rgba(0,161,75,0.3)' ); //we can set this here, but it'd probably be better to get it from the CSS; for the example we're setting it here.
+    var ending_color = new $.Color( 'rgba(0,161,75,0.99)' ); ;//what color we want to use in the end
     $(document).scroll(function() {
         scroll_pos = $(this).scrollTop(); 
         if(scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos ) { 
@@ -86,27 +86,55 @@ $(document).ready(function() {
 
 /*----- STAFF SECTION -----*/
     
+    var document = $(document);
+    
 $('#mesaros, #keeler, #watkins').click(function(event){
-    xCoord = $(this).position().left - 70;
-    console.log(xCoord);
+    // animate staff bio slide down
+    var staffID = $(this).attr('id');
+    console.log(yCoord);
     
-    $(this).animate({
-        right: xCoord
-    }, 200);
+        $(this).animate({
+            top: 20
+        }, 1000, function(){
 
-    $(this).children('p').fadeToggle('fast');
+        });
     
-    if (xCoord) {
+    var yCoord = $(this).position.top;
+
+    if (yCoord > 0) {
+        $(this).animate({
+            top: -20
+        })
+    } else {
+
+    }
         
-    $(this).siblings().animate({
-        opacity: 0
-    }, 'fast', 'linear');
-        
+    if (staffID == 'mesaros') {
+        $('#mesarosBio').slideToggle();
+        $(this).prev('div').animate({
+            opacity: 0.4
+        }, 500, 'linear');
+            
+        $(this).next('div').animate({
+            opacity: 0.4
+        }, 500, 'linear');
+        staffID = 0;
+    } else if (staffID == 'keeler') {
+        $('#keelerBio').slideToggle();
+    } else if (staffID == 'watkins') {
+        $('#watkinsBio').slideToggle();
     } else {
         
-    $(this).siblings().animate({
+    }
+
+    // hide all other staff members not currently selected
+    if (staffID == 0) {
+        
+    $(this).siblings('div').animate({
         opacity: 1
-    }, 'fast', 'linear');
+    }, 500, 'linear');
+        
+    } else {
         
     }
 
@@ -114,11 +142,6 @@ $('#mesaros, #keeler, #watkins').click(function(event){
 });
     
 
-    
-$(document).click(function() {
-    $('.staffMember p').fadeOut('fast');
-    $('.staffMember').fadeIn('fast');
-});
 
 /*
 $('.staffPhoto').hover(function() {

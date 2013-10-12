@@ -6,6 +6,7 @@
     <meta name="author" content="Green Gravel Comedy Festival">
     <meta name="viewport" content="width=device-width" />
 <title>Green Gravel Comedy Festival</title>
+<link rel="icon" href="favicon.png">
 <!-- Fixes -->
 <!--[if gte IE 6]><!-->
     <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen,projection" />
@@ -24,11 +25,6 @@
     <script type="text/javascript" src="js/jquery.color.js"></script>
 
 </head>
-
-    
-
-
-
 
 <body>
     
@@ -59,14 +55,19 @@
                     <li><a href="#about">About</a></li>
                 </ul>
             </nav>
+                
+<!--                <img src="img/ggheadline.svg"/> -->
+                
+                
             
             <div id="headline">
-                <time>March 28-30</time>
+                <time>March 28-30, 2014</time>
                 <h2><span>Green</span> <span>Gravel</span> <span>Comedy</span> <span>Fest</span></h2>
                 <p><span>Iowa</span> <span>Laugh</span> <span>Harder</span></p>
                 <address>Toledo, IA</address>
                 <img src="img/branding2.svg" id="branding" />
             </div>                
+
                 
             <a href="https://twitter.com/GreenGravelFest" id="twitter" class="icon"><img src="img/twitter_trans.svg" alt="@GreenGravelFest Twitter page" /></a>
             
@@ -91,7 +92,7 @@
                     </div>
                     
                     
-                    <h4>Venues</h4>
+                    <h3>Venues</h3>
                     <div class="venue" id="wieting">
                         <div class="venuePhoto">The<br/> Wieting<br/> Theatre</div>
     
@@ -146,36 +147,45 @@
                 
                 <div class="overlayWrapper">
                 
-                <article>
+                <article class="group">
                 
                     <h3>Staff</h3>
+                                            
+                        <div class="staffMember" id="keeler">
+                            <img src="/img/staff_keeler.jpg"/>
+                            <h5>Lee Keeler</h5>
+                            <em>Festival President</em>
+                        </div>
                     
-                    <div class="staffMember" id="keeler">
-                        
-                        <div class="staffPhoto"></div>
-                        <h5>Lee Keeler</h5>
-                        <em>Festival President</em>
-                        
-                        <p>Born and raised in Sioux City, Lee is a comedy writer and producer living in Los Angeles. He received his MFA in Dramatic Writing with honors from the Savannah College of Art and Design. He has written for ScreenJunkies.com, The Devastator Quarterly, Crave Comedy Online and more; this work has turned up in places like The A.V. Club, The Huffington Post and /Film. Keeler produces and hosts The Hour of Power Hour, a monthly comedy variety event at the Improv Hollywood that regularly sells out. The show has consistently boasted some of the finest voices in comedy today, including TJ Miller, Kyle Kinane, David Spade, Greg Proops, Paul Scheer, Maria Bamford and many more.</p>
-                        
-                    </div><!-- /staffMember Keeler -->
-                    
-                    <div class="staffMember" id="mesaros">
-                        
-                        <div class="staffPhoto"></div>
-                        <h5>Matthew Mesaros</h5>
-                        <em>Vice President</em>
-                        
-                        <p>Matthew hails from Savannah, Georgia but has made his home in Iowa City, Iowa as a web developer, writer, designer and pool junkie. He currently attends the University of Iowa pursuing a BFA in Graphic Design while working for Epiphany Design Co, a local web development startup. He has written film reviews for the local Iowa City monthly "Little Village" and he is also the founder, designer and curator of <a href="http://cinelogue.com">Cinelogue</a>, an online film essay journal. He is a dedicated Atlanta Braves fan and occasionally performs pieces for 12 string guitar around town.</p>
-                        
-                    </div><!-- /staffMember Mesaros -->
+                        <div class="staffMember" id="mesaros">
+                            <img src="/img/staff_mesaros.jpg"/>
+                            <h5>Matthew Mesaros</h5>
+                            <em>Vice President</em>
+                        </div>
                     
                     <div class="staffMember" id="watkins">
-                    
-                        <div class="staffPhoto"></div>
+                        <img src="/img/staff_watkins.jpg"/>
                         <h5>Evan Watkins</h5>
                         <em>Festival Coordinator</em>
+                    </div>
+
+                    <div id="keelerBio" class="staffBio">
+                        <p>Born and raised in Sioux City, Lee is a comedy writer and producer living in Los Angeles. He received his MFA in Dramatic Writing with honors from the Savannah College of Art and Design. He has written for ScreenJunkies.com, The Devastator Quarterly, Crave Comedy Online and more; this work has turned up in places like The A.V. Club, The Huffington Post and /Film. Keeler produces and hosts The Hour of Power Hour, a monthly comedy variety event at the Improv Hollywood that regularly sells out. The show has consistently boasted some of the finest voices in comedy today, including TJ Miller, Kyle Kinane, David Spade, Greg Proops, Paul Scheer, Maria Bamford and many more.</p>
+                    </div>
+
+                    <div id="mesarosBio" class="staffBio">
+                        <p>Matthew hails from Savannah, Georgia but has made his home in Iowa City, Iowa as a web developer, writer, designer and pool junkie. He currently attends the University of Iowa pursuing a BFA in Graphic Design while working for Epiphany Design Co, a local web development startup. He has written film reviews for the local Iowa City monthly "Little Village" and he is also the founder, designer and curator of <a href="http://cinelogue.com">Cinelogue</a>, an online film essay journal. He is a dedicated Atlanta Braves fan and occasionally performs pieces for 12 string guitar around town.</p>
                         
+                        <ul>
+                            <li><a href="https://twitter.com/matthewmesaros" id="twitter" rel="external">@matthewmesaros</a></li>
+                            <li><a href="https://www.facebook.com/mentholsteambot" id="facebook" rel="external">facebook.com/mentholsteambot</a></li>
+                            <li><a href="http://www.linkedin.com/in/mamesaros" id="linkedin" rel="external"></a></li>
+                            <li><a href="http://www.cinelogue.com" rel="external">Cinelogue.com</a></li>
+                        </ul>
+                    </div>
+
+                    
+                    <div id="watkinsBio" class="staffBio">
                         <p>Ohio born Evan Watkins is a comedy content producer based in Los Angeles. He's quickly made a name for himself producing video content for The Laugh Factory comedy club's online markets. He's had a hand in creating various sketches, podcasts and stand-up clips, working alongside comedians such as Dom Irrera, Adam Ray, Finesse Mitchell and many more. As for live comedy, he wrote and produced a year-long run of a successful standup and sketch show, "Comedy Slice" at the Hollywood Improv club. He is currently a sketch comedy writer and performer at the Improv Olympic West Theater, an avid hockey fan, and podcaster. His Pittsburgh themed Yinzcast can be found on iTunes.</p>
                     </div><!-- /staffMember Watkins -->
 
@@ -197,6 +207,10 @@
                         <li>lee@greengravelcomedyfest.com</li>
                         <li>evan@greengravelcomedyfest.com</li>
                     </ul>
+                    
+                    <a href="https://twitter.com/GreenGravelFest" id="twitter" class="icon"><img src="img/twitter_trans.svg" alt="@GreenGravelFest Twitter page" /></a>
+            
+                    <a href="https://www.facebook.com/GreenGravelComedyFest" id="facebook" class="icon"><img src="img/facebook_trans.svg" alt="Facebook page" /></a>
 
                   
                 </article>
@@ -209,7 +223,7 @@
     
     <script src="js/jquery.fittext.js"></script>
     <script>
-        jQuery("#headline").fitText(1);
+        jQuery("#headline").fitText(1.2);
     </script>
 <!-- (ʃ) -->
 </body>
