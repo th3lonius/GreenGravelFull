@@ -3,7 +3,7 @@ Title: Screen styles
 Author: Matthew Mesaros (mesaros.creative@gmail.com)
 */
 
-/* =reset
+/* =RESET
 ----------------------------------------------- */
 * {
 	box-sizing: border-box;
@@ -31,11 +31,10 @@ table {
 	border-spacing: 0;
 }
 
-img { max-width: 100%; }
+img, object { max-width: 100%; }
 
-/* =reusable classes
+/* =REUSABLE
 ----------------------------------------------- */
-
 .group:after {
     content: ".";
     display: block;
@@ -56,7 +55,7 @@ img { max-width: 100%; }
     font-style: italic;
 }
 
-/* =links
+/* =LINKS
 ----------------------------------------------- */
 
 a:link, a:visited {
@@ -68,81 +67,148 @@ a:hover {
     color: #FFF;
 }
 
-/* =page layout
+/* =SOCIAL
 ----------------------------------------------- */
+.social {
+    background: #FFF;
+    right: 0;
+    padding: 6px 6px 6px 0;
+    position: fixed;
+    top: 15%;
+    width: auto;
+    z-index: 100;
+}
 
+.icon img { height: 100%; }
+    
+a.icon {
+    display: block;
+    float: left;
+    height: 40px;
+    margin-left: 5px;
+    opacity: 0.5;
+    -webkit-transition: opacity linear 0.2s;
+}
+
+a.icon:first-child {
+    margin-left: 0;
+}
+    
+a.icon:hover {
+    opacity: 0.9;
+}
+
+.social:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -52px;
+	top: 0;
+	border-width: 26px 26px;
+	border-style: solid;
+	border-color: #FFF #FFF #FFF transparent;
+    z-index: 99;
+}
+
+/* =GLOBALS
+----------------------------------------------- */
 body {
-    background: url(../img/theater_proofed.jpg) 0 0 no-repeat;
-    background-attachment: fixed;
-    background-size: auto;
+    background-image: url(../img/broken_noise.jpg) repeat 0 0 transparent;
     color: #333;
-    font-family: "museo-slab";
+    font-family: "proxima-nova";
     font-size: 100%;
     height: 100%;
     line-height: 1.45;
+    position: relative;
     width: 100%;
 }
 
-#container {
-    left: 0;
+.wrapper {
+    margin: 0 auto;
     position: relative;
-    right: 0;
-    width: 100%;
-}
-
-#wrapper {
-    background: #FFF;
-    position: relative;
+    max-width: 70em;
     text-align: center;
-    width: 100%;
     z-index: 1000;
 }
 
 section {
     text-align: center;
+    position: relative;
     width: 100%;
+    z-index: 100;
 }
 
 section article {
-    margin: 0 auto;
-    max-width: 72em;
-    padding: 70px;
+    padding: 150px 0 70px;
+    position: relative;
     text-align: left;
+    width: 100%;
 }
 
 section p {
-    font-size: 1em;
-    font-weight: 300;
+    font-size: 1.25em;
+    font-weight: 500;
     line-height: 1.5;
     margin-bottom: 1em;
+    text-align: left;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: "proxima-nova";
+    font-weight: 700;
+}
+
+h2 {
+    background: #FFF;
+    color: #333;
+    display: block;
+    font-size: 2.5em;
+    font-weight: 900;
+    left: 0;
+    line-height: 0;
+    padding: 30px;
+    position: absolute;
+    top: 70px;
+    text-transform: uppercase;
+    z-index: 99999;
+}
+
+h2:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -62px;
+	top: 0;
+	border-width: 30px 30px;
+	border-style: solid;
+	border-color: #FFF transparent #FFF #FFF;
+    z-index: 99;
+}
+
+.altgreen {
+    background: rgb(13%, 69%, 39%)!important;
+    color: #FFF!important;
+}
+
+.altgreen:after {
+    border-color: rgb(13%, 69%, 39%) transparent rgb(13%, 69%, 39%) rgb(13%, 69%, 39%)!important;
 }
 
 h3 {
-    color: 333;
-    font-size: 1.5em;
-    font-weight: 100;
-    letter-spacing: 1px;
-    line-height: 1;
-    margin-bottom: 1em;
-    text-align: center;
-    text-transform: uppercase;
+    font-size: 2em;
+    text-align: left;
 }
 
-h3::before, h3::after {
-    content: "=";
-    display: inline-block;
-    margin: 0 2em;
-    -webkit-transform: scaleX(8);
-    -moz-transform: scaleX(8);
-    transform: scaleX(8);
+h4 {
+    font-size: 1.5em;
+    text-align: left;
 }
 
 .col-1 {
     float: left;
+    text-align: left;
     width: 48%;
 }
 
@@ -151,28 +217,87 @@ h3::before, h3::after {
     width: 48%;
 }
 
+.block {
+    display: block;
+}
+
 /* =NAVIGATION
 ----------------------------------------------- */
-nav {
+header {
+    background: rgba(32,32,32,0.99);
     height: 60px;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000;
+    -webkit-transition: all ease 0.5s;
+}
+
+#navMain ul {
+    height: 100%;
     text-align: center;
 }
 
-nav ul li {
-    float: left;
+#navMain ul li {
+    display: inline-block;
+    height: auto;
+    position: relative;
+    vertical-align: middle;
 }
 
-nav ul li a {
-    border-bottom: 2px solid transparent;
+#navMain ul li[data-type*="link"] a {
     color: #FFF;
-    display: inline-block;
-    font-family: "proxima-nova";
-    font-size: 1.25em;
-    font-weight: normal;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
     height: 100%;
-    padding: 25px;
+    letter-spacing: 1px;
+    line-height: 60px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    -webkit-transition: all ease 0.5s;
+}
+
+#navMain ul li[data-type*="link"]:hover:after {
+    background: #20AF64;
+    bottom: -3px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+}
+
+#navMain ul li[data-type*="link"] a:hover {
+    background: #FFF;
+    color: #202020;
+}
+
+.active {
+    background: #FFF;
+    color: #202020 !important;
+}
+
+.liActive:after {
+    background: #20AF64;
+    bottom: -3px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
     width: 100%;
-    -webkit-transition: all ease 1s;
+}
+
+.logotype {
+    background: url(../img/branding2.svg) no-repeat center transparent;
+    background-size: cover;
+    display: block;
+    line-height: 80px;
+    margin: 0 30px;
+    text-indent: -3000px;
+    width: 120px;
 }
 
 #navScroll {
@@ -196,253 +321,202 @@ nav ul li a {
     color: #333332;
 }
 
-#navMain {
-    margin-top: 10px;
-}
-
-#navMain ul li a {
-    padding: 10px 25px;
-}
-
-#navMain ul li a:hover {
-    border-bottom: 2px solid #FFF;
-    border-bottom-width: 100%;
-}
-
-.current {
-    border-bottom: 2px solid #FFF;
-}
-
-/* =HEADER
+/* =HOME
 ----------------------------------------------- */
-/*
-@-webkit-keyframes colorPulse{
-    0% { background-color: rgba(21,163,70,0.5); }
-    12.5% { background-color: rgba(161,232,126,0.5); }
-    25% { background-color: rgba(136,255,187,0.5); }
-    37.5% { background-color: rgba(253,255,179,0.5); }
-    50% { background-color: rgba(136,232,227,0.5); }
-    62.5% { background-color: rgba(101,173,255,0.5); }
-    75% { background-color: rgba(135,182,25,0.5); }
-    87.5% { background-color: rgba(42,166,66,0.5); }
-    100% { background-color: rgba(142,170,87,0.5); }
-}
-*/
-
-header {
-    background-color: rgba(0,161,75,0.3);
-    height: 100vh;
+#home {
+    background-color: rgba(32,175,100,1.0);
+    background-image: url(../img/noisy_net.png) 0 0 repeat transparent;
     margin: 0 auto;
     position: relative;
-    text-align: left;
     width: 100%;
 }
 
-#patternWrap {
-    bottom: 0;
-    top: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
+.branding {
+    margin-bottom: 3em;
     width: 100%;
 }
 
-#headline {
+.branding object {
+    width: 100%;
+}
+
+#home article strong {
+    color: #333;
+}
+
+#home article strong:after {
     color: #FFF;
+    content: "v";
     display: block;
-    font-family: "proxima-nova";
-    line-height: 1;
-    margin-top: 50px;
-    position: fixed;
-    text-align: center;
-    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
-    text-transform: uppercase;
-    vertical-align: middle;
-    width: 100%;
+    font-weight: 600;
+    -webkit-transform: scale(4);
 }
 
-#headline time::before {
-    content: "on";
-    font-family: "proxima-nova";
-    font-size: 0.25em;
-    font-weight: 900;
-    position: relative;
-    right: 20px;
-    top: 12px;
-    vertical-align: top;
-}
-
-#headline time {
-    display: block;
-    font-size: 0.5em;
-    font-weight: 100;
-    position: relative;
-    width: 100%;
-}
-
-#headline h2::before {
-    content: "the";
-    font-family: "proxima-nova";
-    font-size: 0.2em;
-    position: relative;
-    right: 20px;
-    text-shadow: 1px 0px 0px rgba(0,0,0,0.4);
-    top: 25px;
-    vertical-align: top;
-}
-
-#headline h2 {
-    border-bottom: 2px solid #FFF;
-    border-top: 2px solid #FFF;
-    display: inline-block;
-    font-weight: 900;
-    line-height: 0.8;
-    padding: 14px 0;
-    position: relative;
-    text-shadow: -8px 6px 0px rgba(0,0,0,0.2);
-    width: 80%;
-}
-
-#headline p::before {
-    content: "makes";
-    font-family: "proxima-nova";
-    font-size: 0.25em;
-    position: relative;
-    right: 20px;
-    top: 12px;
-    vertical-align: top;
-}
-
-#headline p {
-    font-size: 0.5em;
-    font-weight: 800;
-    position: relative;
-    right: 22px;
-}
-
-#headline address {
-    font-size: 0.4em;
-    font-weight: 100;
-}
-
-#headline address::before, #headline address::after {
-    content: "=";
-    display: inline-block;
-    margin: 0 2em;
-    -webkit-transform: scaleX(8);
-}
-
-header #branding {
-    position: relative;
-    top: -10%;
-    width: 100px;
-}
-
-header #logotype {
-    bottom: 50px;
-    position: fixed;
-    right: 50px;
-    width: 200px;
-}
-
-header .icon {
-    bottom: 40px;
-    position: fixed;
-    z-index: 10;
-}
-
-.icon img { width: 60px; }
-    
-a.icon {
-    display: inline-block;
-    padding: 10px;
-}
-    
-a.icon:hover {
-    -moz-transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-/* =SOCIAL
+/* =UPDATES
 ----------------------------------------------- */
-
-#twitter {
-    right: 40px;
+#updates p {
+    font-size: 1.5em;
 }
 
-#facebook {
-    right: 120px;
+#updates article img {
+    float: left;
+    margin-right: 1.5em;
+    width: 25%;
 }
-
-
-/* =CONTENT
------------------------------------------------ */
-
-#content {
-    background: rgba(255,255,255,0.99);
-    width: 100%;
-}
-
 
 /* =ABOUT
 ----------------------------------------------- */
+#about {
+    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
+    color: #FFF;
+}
 
 #about p {
+    color: #FFF;
     margin: 1em 0;
 }
 
-#breakdown {
-    display: inline-block;
+#about h4 {
+    margin: 0.5em 0;
 }
 
-.venue {
-    width: 48%;
+#breakdown { display: inline-block; }
+
+/* =VENUES
+----------------------------------------------- */
+#venues article {
+    background: rgba(255,255,255,0.99);
+    bottom: 40px;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    -webkit-backface-visibility: hidden;
 }
 
-.venue:last-child {
-    margin-right: 0;
-}
-
-.venuePhoto {
-    color: rgba(255,255,255,0.8);
-    font-family: "proxima-nova";
-    font-size: 3em;
-    font-weight: 100;
-    line-height: 1;
-    padding: 40px;
-    text-align: right;
+#venues h4 {
+    background: rgb(13%, 69%, 39%);
+    color: #FFF;
+    bottom: 200px;
+    font-size: 2em;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 1px;
+    padding: 30px;
+    position: absolute;
     text-transform: uppercase;
-    width: 100%;
+    -webkit-backface-visibility: hidden;
 }
 
-#wieting {
-    float: left;
+#venues h4 address {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 600;
+    position: relative;
 }
 
-#bumblebees {
-    float: right;
+/* =LINEUP
+----------------------------------------------- */
+#lineup {
+    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
+    color: #FFF;
 }
 
-#wieting .venuePhoto {
-    background-image: url(../img/venue_wieting.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+/* =WORKSHOPS
+----------------------------------------------- */
+#workshops {
+    background-color: rgba(32,175,100,1.0);
+    color: #FFF;
 }
 
-#bumblebees .venuePhoto {
-    background-image: url(../img/venue_bumblebees.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 225px;
-    text-align: left;
+/* =SUBMISSIONS
+----------------------------------------------- */
+
+
+/* =SPONSORS
+----------------------------------------------- */
+#sponsors {
+    padding-top: 8%;
+}
+
+#sponsors .wrapper {
+    width: 40%;
+}
+
+#sponsors p {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#sponsors ul {
+    margin: 0 auto;
+    width: 60%;
+}
+
+#sponsors ul li {
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    margin-right: 1em;
+    position: relative;
+    vertical-align: middle;
+    width: 14%;
+}
+
+#sponsors ul li:hover img {
+    opacity: 0.6;
+}
+
+#sponsors ul li:hover span {
+    opacity: 0.8;
+}
+
+#sponsors img {
+    margin-bottom: 1em;
+    max-width: 100%;
+    opacity: 0.4;
+    -webkit-transition: all ease 0.5s;
+}
+
+#sponsors span {
+    font-size: 1.5em;
+    font-weight: 400;
+    opacity: 0;
+    -webkit-transition: all ease 0.5s;
+}
+
+/* =DONATE
+----------------------------------------------- */
+#donate p {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.form_button {
+    padding: 16px 8px;
+    background-color: #61e69d;
+    cursor: pointer;
+    font-size: 3em;
+    font-weight: 700;
+    color: #FFFFFF;
+    border-bottom: 4px solid #5cd994;
+    margin: 0px 15px 15px 0px;
+    border-radius: 5px;
+    text-align: center;
+    width: 360px;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+.form_button:hover {
+    background-color: #6bf5a9;
 }
 
 /* =TICKETS
 ----------------------------------------------- */
-
 #tickets div {
     border-radius: 10px;
     box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
@@ -455,7 +529,7 @@ a.icon:hover {
     width: 30%;
 }
 
-#tickets h3 {
+#tickets h2 {
     font-size: 2em;
     font-weight: 900;
     text-transform: uppercase;
@@ -476,72 +550,53 @@ a.icon:hover {
 
 /* =STAFF
 ----------------------------------------------- */
-
 #staff {
-    background-image: url(../img/wheels.jpg);
-    background-size: cover;
-    background-attachment: fixed;
+    background: #20AF64;
     color: #FFF;
-    padding: 0;
-    position: relative;
-    width: 100%;
 }
 
-#staff article {
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+#staff .wrapper {
+    max-width: 75em;
     text-align: center;
-}
-
-.overlayWrapper {
-    background: rgba(0,0,0,0.6);
-    height: 100%;
-    width: 100%;
-}
-
-#staff blockquote {
-    display: none;
-    font-size: 2em;
-    font-weight: 100;
-    line-height: 1.2;
-    margin: 1em 0;
-    width: 70%;
-}
-
-#staff blockquote em {
-    font-weight: 900;
-}
-
-.staffMember {
-    display: inline-block;
-    margin-right: 20px;
-    position: relative;
-    text-align: center;
-}
-
-.staffMember:last-child {
-    margin-right: 0;
-}
-
-.staffMember h5 {
-    text-transform: uppercase;
 }
 
 .staffBio {
-    display: none;
-    margin: 40px auto 0;
+    margin: 20px auto 0;
     text-align: left;
+    vertical-align: top;
+    width: 49%;
+}
+
+.photoID {
+    margin-right: 2%;
+    text-align: center;
+    width: 30%;
+}
+
+.photoID img {
     width: 80%;
 }
 
-.staffPhoto {
-    display: inline-block;
-    cursor: pointer;
+h4 strong {
+    font-weight: 600;
 }
 
-.staffMember ul {
+.floatLeft > * {
+    float: left;
+}
 
+.floatRight > * {
+    float: right;
+}
+
+.floatRight img {
+    margin-left: 4%;
+    margin-right: 0 !important;
+}
+
+.staffBio p {
+    font-size: 0.9em;
+    width: 68%;
 }
 
 .staffMember .icon {
@@ -551,10 +606,8 @@ a.icon:hover {
     left: 900px;
 }
 
-
 /* =CONTACT
 ----------------------------------------------- */
-
 #contact {
     background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
 }
@@ -562,6 +615,7 @@ a.icon:hover {
 #contact article {
     color: rgba(255,255,255,0.9);
 }
+
 
 #contact p {
     float: left;
@@ -573,12 +627,62 @@ a.icon:hover {
     float: left;
 }
 
-#contact .icon {
-    position: absolute;
+@media only screen
+and (max-width: 1152px) {
+    header {
+        height: 50px !important;
+    }
+    
+    #navMain ul li[data-type*="link"] a {
+        font-size: 0.875em;
+        line-height: 50px !important;
+        padding: 0 20px;
+    }
+
+.logotype {
+    line-height: 50px !important;
+    width: 100px;
+}
+
 }
 
 @media only screen
-and (max-width: 600px) {
+and (max-width: 850px) {
+    header {
+        bottom: 0;
+        position: absolute;
+        height: auto !important;
+        top: auto;
+    }
+
+    #navMain ul li[data-type*="link"] {
+        width: 48.855%;
+    }
+
+    #navMain ul li[data-type*="link"] a {
+        padding: 0 !important;
+    }
+
+    .logotype {
+        display: none;
+    }
+
+    #home {
+        padding-top: 1em !important;
+    }
+
+#gogoBox {
+    padding: 20px;
+}
+    
+    #gogoBox p {
+        font-size: 1em;
+    }
+
+a.icon {
+    display: none !important;
+}
+
 
 }
 
@@ -587,51 +691,49 @@ and (max-width: 600px) {
 and (min-width: 200px)
 and (max-width: 700px) {
     
-    section article {
-        padding: 30px;
-    }
-    
-    header img {
-        margin-top: 2em;
-        padding: 0 2em;
-    }
-    
-    #headline span {
-        display: block;
-    }
-    
-    #headline span, #headline address {
-        font-size: 3em;
-    }
-    
-    .staffMember {
-        display: block;
-        margin: 0 auto;
-        padding-right: 0;
-        width: 80%;
-    }
-    
-    .venue {
-        width: 100%;
-    }
-    
-    #navMain {
-        display: none;
-    }
-    
+section article {
+    padding: 12px;
+}
 
-    
-    
+header img {
+    margin-top: 2em;
+    padding: 0 2em;
+}
+
+#headline span {
+    display: block;
+}
+
+#headline span, #headline address {
+    font-size: 3em;
+}
+
+.staffBio {
+    width: 70%;
+}
+
+.staffBio p {
+    display: none;
+}
+
+.photoID {
+    margin-right: 0!important;
+    width: 100%;
+}
+
+.staffMember {
+    display: block;
+    margin: 0 auto;
+    padding-right: 0;
+    width: 80%;
+}
+
+.venue {
+    width: 100%;
 }
     
 
-    
-
-    
-    
-    
-
-
+}
 
 @media only screen
 and (min-width: 1024px) {
@@ -641,3 +743,50 @@ and (min-width: 1024px) {
 
     
 }
+/*
+==============================================
+pulse
+==============================================
+*/
+
+.pulse{
+	animation-name: pulse;
+	-webkit-animation-name: pulse;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		opacity: 0.7;		
+	}
+	50% {
+		transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(0.9);
+		opacity: 0.7;	
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;		
+	}
+	50% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;	
+	}			
+}
+
