@@ -61,54 +61,11 @@ img, object { max-width: 100%; }
 a:link, a:visited {
     color: #FFF;
     text-decoration: none;
+    -webkit-transition: all ease 0.2s;
 }
 
 a:hover {
     color: #FFF;
-}
-
-/* =SOCIAL
------------------------------------------------ */
-.social {
-    background: #FFF;
-    right: 0;
-    padding: 6px 6px 6px 0;
-    position: fixed;
-    top: 15%;
-    width: auto;
-    z-index: 100;
-}
-
-.icon img { height: 100%; }
-    
-a.icon {
-    display: block;
-    float: left;
-    height: 40px;
-    margin-left: 5px;
-    opacity: 0.5;
-    -webkit-transition: opacity linear 0.2s;
-}
-
-a.icon:first-child {
-    margin-left: 0;
-}
-    
-a.icon:hover {
-    opacity: 0.9;
-}
-
-.social:before {
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: -52px;
-	top: 0;
-	border-width: 26px 26px;
-	border-style: solid;
-	border-color: #FFF #FFF #FFF transparent;
-    z-index: 99;
 }
 
 /* =GLOBALS
@@ -120,6 +77,7 @@ body {
     font-size: 100%;
     height: 100%;
     line-height: 1.45;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
 }
@@ -128,19 +86,18 @@ body {
     margin: 0 auto;
     position: relative;
     max-width: 70em;
-    text-align: center;
     z-index: 1000;
 }
 
-section {
+section, footer {
     text-align: center;
+    padding: 150px 0 70px;
     position: relative;
     width: 100%;
     z-index: 100;
 }
 
 section article {
-    padding: 150px 0 70px;
     position: relative;
     text-align: left;
     width: 100%;
@@ -166,8 +123,8 @@ h2 {
     font-size: 2.5em;
     font-weight: 900;
     left: 0;
-    line-height: 0;
-    padding: 30px;
+    line-height: 1;
+    padding: 10px 20px;
     position: absolute;
     top: 70px;
     text-transform: uppercase;
@@ -179,9 +136,9 @@ h2:after {
 	position: absolute;
 	width: 0;
 	height: 0;
-	right: -62px;
+	right: -46px;
 	top: 0;
-	border-width: 30px 30px;
+	border-width: 22px 22px;
 	border-style: solid;
 	border-color: #FFF transparent #FFF #FFF;
     z-index: 99;
@@ -192,9 +149,7 @@ h2:after {
     color: #FFF!important;
 }
 
-.altgreen:after {
-    border-color: rgb(13%, 69%, 39%) transparent rgb(13%, 69%, 39%) rgb(13%, 69%, 39%)!important;
-}
+.altgreen:after { border-color: rgb(13%, 69%, 39%) transparent rgb(13%, 69%, 39%) rgb(13%, 69%, 39%)!important; }
 
 h3 {
     font-size: 2em;
@@ -205,6 +160,13 @@ h4 {
     font-size: 1.5em;
     text-align: left;
 }
+
+h5 {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+strong { font-weight: 600; }
 
 .col-1 {
     float: left;
@@ -217,14 +179,84 @@ h4 {
     width: 48%;
 }
 
-.block {
+.block { display: block; }
+
+.noiseBG {
+    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
+    background-attachment: fixed;
+    color: #FFF;
+}
+
+/* =FIXED ITEMS
+----------------------------------------------- */
+.social {
+    background: hsl(148, 68%, 50%);
+    right: 0;
+    padding: 6px 6px 6px 0;
+    position: fixed;
+    top: 20%;
+    width: 95px;
+    z-index: 100;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+}
+
+.social:before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -51px;
+	top: 0;
+	border-width: 26px 26px;
+	border-style: solid;
+	border-color: hsl(148, 68%, 50%) hsl(148, 68%, 50%) transparent transparent;
+    z-index: 99;
+}
+
+.social a img { height: 100%; }
+
+.social a {
     display: block;
+    float: left;
+    height: 39px;
+    margin-left: 5px;
+    opacity: 0.6;
+    -webkit-transition: opacity linear 0.2s;
+}
+
+.social a:hover { opacity: 0.9; }
+
+.social a:first-child { margin-left: 0; }
+
+#backToTop::before {
+    bottom: 0;
+	content: '';
+    left: 50%;
+	position: fixed;
+	width: 0;
+	height: 0;
+	border-width: 30px;
+	border-style: solid;
+	border-color: transparent transparent hsl(148, 68%, 41%) transparent;
+    z-index: 100;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#backToTop:hover::before {
+    border-color: transparent transparent hsl(148, 68%, 50%) transparent;
 }
 
 /* =NAVIGATION
 ----------------------------------------------- */
 header {
-    background: rgba(32,32,32,0.99);
+    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
     height: 60px;
     left: 0;
     position: fixed;
@@ -248,7 +280,7 @@ header {
     vertical-align: middle;
 }
 
-#navMain ul li[data-type*="link"] a {
+#navMain ul li a {
     color: #FFF;
     display: block;
     font-size: 1em;
@@ -261,7 +293,7 @@ header {
     -webkit-transition: all ease 0.5s;
 }
 
-#navMain ul li[data-type*="link"]:hover:after {
+#navMain ul li:hover:after {
     background: #20AF64;
     bottom: -3px;
     content: "";
@@ -270,14 +302,9 @@ header {
     position: absolute;
 }
 
-#navMain ul li[data-type*="link"] a:hover {
+#navMain ul li[data-type*="link"] a:hover, #navMain ul li.active a {
     background: #FFF;
     color: #202020;
-}
-
-.active {
-    background: #FFF;
-    color: #202020 !important;
 }
 
 .liActive:after {
@@ -293,55 +320,38 @@ header {
 .logotype {
     background: url(../img/branding2.svg) no-repeat center transparent;
     background-size: cover;
-    display: block;
-    line-height: 80px;
+    display: inline-block;
+    line-height: 60px;
     margin: 0 30px;
     text-indent: -3000px;
     width: 120px;
-}
-
-#navScroll {
-    background: rgba(51,51,50,0.9);
-    border-bottom: 4px solid rgba(0,0,0,0.3);
-    display: none;
-    left: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2000;
-}
-
-#navScroll ul li a {
-    color: #FFF;
-    line-height: 1;
-}
-
-#navScroll ul li a:hover {
-    background: rgba(135,182,25,0.9);
-    color: #333332;
 }
 
 /* =HOME
 ----------------------------------------------- */
 #home {
     background-color: rgba(32,175,100,1.0);
-    background-image: url(../img/noisy_net.png) 0 0 repeat transparent;
-    margin: 0 auto;
+    height: 100vh;
     position: relative;
+    text-align: center;
     width: 100%;
+    z-index: 101;
 }
 
 .branding {
+    margin: 0 auto;
     margin-bottom: 3em;
-    width: 100%;
+    width: 90%;
 }
 
-.branding object {
+.branding img {
+    height: 100%;
     width: 100%;
 }
 
 #home article strong {
     color: #333;
+    font-weight: 700;
 }
 
 #home article strong:after {
@@ -349,41 +359,63 @@ header {
     content: "v";
     display: block;
     font-weight: 600;
+    position: relative;
     -webkit-transform: scale(4);
+}
+
+#donateButton {
+    background: hsl(322, 50%, 26%);
+    font-weight: 700;
+    padding: 10px 16px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    top: 13%;
+}
+
+#donateButton:hover { background: hsl(322, 50%, 23%); }
+
+#donateButton:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 101px;
+	top: 0;
+	border-width: 18px 18px;
+	border-style: solid;
+	border-color: hsl(321, 50%, 18%) hsl(321, 50%, 18%) transparent transparent;
+    z-index: 99;
 }
 
 /* =UPDATES
 ----------------------------------------------- */
-#updates p {
-    font-size: 1.5em;
+#updates p { font-size: 1.25em; }
+
+#updates time {
+    font-size: 1.25em;
+    font-weight: 600;
+    text-align: left!important;
 }
 
 #updates article img {
-    float: left;
+    float: right;
     margin-right: 1.5em;
     width: 25%;
 }
 
+#updates a { color: hsl(149, 69%, 41%); }
+
+#updates a:hover { color: hsl(149, 69%, 34%); }
+
 /* =ABOUT
 ----------------------------------------------- */
-#about {
-    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
-    color: #FFF;
-}
-
-#about p {
-    color: #FFF;
-    margin: 1em 0;
-}
-
-#about h4 {
-    margin: 0.5em 0;
-}
-
-#breakdown { display: inline-block; }
+#about h4 { margin: 0.5em 0; }
 
 /* =VENUES
 ----------------------------------------------- */
+#venues { padding: 0!important; }
+
 #venues article {
     background: rgba(255,255,255,0.99);
     bottom: 40px;
@@ -417,10 +449,7 @@ header {
 
 /* =LINEUP
 ----------------------------------------------- */
-#lineup {
-    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
-    color: #FFF;
-}
+
 
 /* =WORKSHOPS
 ----------------------------------------------- */
@@ -435,21 +464,13 @@ header {
 
 /* =SPONSORS
 ----------------------------------------------- */
-#sponsors {
-    padding-top: 8%;
-}
-
 #sponsors .wrapper {
-    width: 40%;
-}
-
-#sponsors p {
-    font-size: 1.25em;
-    text-align: center;
+    padding-top: 0;
+    width: 50%;
 }
 
 #sponsors ul {
-    margin: 0 auto;
+    margin: 2em auto 0;
     width: 60%;
 }
 
@@ -463,13 +484,9 @@ header {
     width: 14%;
 }
 
-#sponsors ul li:hover img {
-    opacity: 0.6;
-}
+#sponsors ul li:hover img { opacity: 0.6; }
 
-#sponsors ul li:hover span {
-    opacity: 0.8;
-}
+#sponsors ul li:hover span { opacity: 0.8; }
 
 #sponsors img {
     margin-bottom: 1em;
@@ -487,9 +504,16 @@ header {
 
 /* =DONATE
 ----------------------------------------------- */
+#donate article {
+    padding-top: 2em;
+    width: 50%;
+}
+
 #donate p {
     color: #333;
-    font-size: 1.5em;
+    font-size: 1.25em;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .form_button {
@@ -500,7 +524,7 @@ header {
     font-weight: 700;
     color: #FFFFFF;
     border-bottom: 4px solid #5cd994;
-    margin: 0px 15px 15px 0px;
+    margin-bottom: 10px;
     border-radius: 5px;
     text-align: center;
     width: 360px;
@@ -515,117 +539,70 @@ header {
     background-color: #6bf5a9;
 }
 
-/* =TICKETS
------------------------------------------------ */
-#tickets div {
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
-    color: #FFF;
-    display: inline-block;
-    height: 260px;
-    margin-right: 20px;
-    padding: 20px;
-    text-align: center;
-    width: 30%;
+#donate form img {
+    display: block;
+    margin: 0 auto;
 }
-
-#tickets h2 {
-    font-size: 2em;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-#ticketSingle {
-    background: #999;
-}
-
-#ticketDay {
-    background: #666;
-}
-
-#ticketWeek {
-    background: #333;
-}
-
 
 /* =STAFF
 ----------------------------------------------- */
-#staff {
-    background: #20AF64;
-    color: #FFF;
-}
-
-#staff .wrapper {
-    max-width: 75em;
+#staff ul {
+    margin: 5em 0 10em;
     text-align: center;
 }
 
-.staffBio {
-    margin: 20px auto 0;
-    text-align: left;
-    vertical-align: top;
-    width: 49%;
-}
-
-.photoID {
-    margin-right: 2%;
+#staff ul li {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 6em;
+    position: relative;
     text-align: center;
-    width: 30%;
 }
 
-.photoID img {
-    width: 80%;
-}
+#staff ul li:last-child { margin-right: 0; }
 
-h4 strong {
-    font-weight: 600;
-}
-
-.floatLeft > * {
-    float: left;
-}
-
-.floatRight > * {
-    float: right;
-}
-
-.floatRight img {
-    margin-left: 4%;
-    margin-right: 0 !important;
-}
-
-.staffBio p {
-    font-size: 0.9em;
-    width: 68%;
-}
-
-.staffMember .icon {
-    display: none;
+#staff ul li::after {
+    display: block;
     position: absolute;
-    top: 0;
-    left: 900px;
+    top: 200px;
+    left: -70%;
+    width: 300%;
+    height: auto;
+    background: #FFF;
+    /*border: 4px solid #00CEFF;*/
+    opacity: 0;
+    padding: 20px;
+    color: #323232;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    transition: .3s all;
+    -webkit-transition: .3s all;
+    -moz-transition: .3s all;
+    -ms-transition: .3s all;
+    text-align: left;
+    z-index: 999999;
 }
 
-/* =CONTACT
------------------------------------------------ */
-#contact {
-    background: url(../img/broken_noise.jpg) repeat 0 0 transparent;
+#staff ul li:hover::after { opacity: 1; }
+
+#keeler::after {
+    content: "Born and raised in Sioux City, Lee is a comedy writer and producer living in Los Angeles. He received his MFA in Dramatic Writing with honors from the Savannah College of Art and Design. He has written for ScreenJunkies.com, The Devastator Quarterly, Crave Comedy Online and more; this work has turned up in places like The A.V. Club, The Huffington Post and /Film. Keeler produces and hosts The Hour of Power Hour, a monthly comedy variety event at the Improv Hollywood that regularly sells out. The show has consistently boasted some of the finest voices in comedy today, including TJ Miller, Kyle Kinane, David Spade, Greg Proops, Paul Scheer, Maria Bamford and many more.";
 }
 
-#contact article {
-    color: rgba(255,255,255,0.9);
+#mesaros::after {
+    content: "Matthew hails from Savannah, Georgia but has made his home in Iowa City, Iowa as a web developer, writer, designer and pool junkie. He currently attends the University of Iowa pursuing a BFA in Graphic Design while working for Epiphany Design Co, a local web development startup. He has written film reviews for the local Iowa City monthly "Little Village" and he is also the founder, designer and curator of Cinelogue, an online film essay journal. He is a dedicated Atlanta Braves fan and occasionally performs pieces for 12 string guitar around town.";
 }
 
-
-#contact p {
-    float: left;
-    margin-right: 2em;
-    width: 60%;
+#watkins::after {
+    content: "Ohio born Evan Watkins is a comedy content producer based in Los Angeles. He's quickly made a name for himself producing video content for The Laugh Factory comedy club's online markets. He's had a hand in creating various sketches, podcasts and stand-up clips, working alongside comedians such as Dom Irrera, Adam Ray, Finesse Mitchell and many more. As for live comedy, he wrote and produced a year-long run of a successful standup and sketch show, "Comedy Slice" at the Hollywood Improv club. He is currently a sketch comedy writer and performer at the Improv Olympic West Theater, an avid hockey fan, and podcaster. His Pittsburgh themed Yinzcast can be found on iTunes.";
 }
 
-#contact ul {
-    float: left;
+#eadon::after {
+    content: "Derek Eadon is a political and public affairs strategist from West Des Moines, IA. Derek has worked for political campaigns, non-profits, and large businesses. He specializes in organization building, integrated planning, and event management. Derek has led efforts on hundreds of events including: the 2013 Harkin Steak Fry, Barack Obama’s 2009 Inauguration, and Barack Obama’s 2012 3-day bus tour of Iowa.";
 }
+
 
 @media only screen
 and (max-width: 1152px) {
@@ -671,21 +648,7 @@ and (max-width: 850px) {
         padding-top: 1em !important;
     }
 
-#gogoBox {
-    padding: 20px;
 }
-    
-    #gogoBox p {
-        font-size: 1em;
-    }
-
-a.icon {
-    display: none !important;
-}
-
-
-}
-
 
 @media only screen
 and (min-width: 200px)
@@ -740,8 +703,6 @@ and (min-width: 1024px) {
 
     body { background-size: cover; }
     
-
-    
 }
 /*
 ==============================================
@@ -789,4 +750,3 @@ pulse
 		opacity: 0.7;	
 	}			
 }
-

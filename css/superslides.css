@@ -22,9 +22,9 @@
 .slides-navigation a {
     position: absolute;
     display: block;
-    height: 40px;
+    height: 50px;
     top: 46%;
-    width: 40px;
+    width: 50px;
     z-index: 999999;
 }
 
@@ -34,7 +34,7 @@
 
 .slides-navigation a.prev {
     background: url(../img/next_arrow.svg) center no-repeat transparent;
-    left: 15px;
+    left: 20px;
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -45,7 +45,7 @@
 
 .slides-navigation a.next {
     background: url(../img/next_arrow.svg) center no-repeat transparent;
-    right: 15px;
+    right: 20px;
 }
 
 .slides-pagination {

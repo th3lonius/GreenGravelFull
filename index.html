@@ -5,7 +5,7 @@
     <meta name="description" content="Green Gravel Comedy Festival">
     <meta name="author" content="Green Gravel Comedy Festival">
     <meta name="viewport" content="width=device-width" />
-<title>Green Gravel Comedy Festival</title>
+<title>The Green Gravel Comedy Festival</title>
 <link rel="icon" href="favicon.png">
 <!-- Fixes -->
 <!--[if gte IE 6]><!-->
@@ -21,45 +21,47 @@
     <script type="text/javascript" src="//use.typekit.net/rsw2iqh.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- Other scripts -->
-    <script type="text/javascript" src="js/smoothscroll_min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/superslides.js"></script>
+    <script type="text/javascript" src="js/jquery.widowFix-1.3.2.min.js"></script>
 </head>
 
 <body>
             
     <header>
         <div class="social group">
-            <a href="https://twitter.com/GreenGravelFest" id="twitter" class="icon"><img src="img/twitter_trans.svg" alt="@GreenGravelFest Twitter page" /></a>
-            <a href="https://www.facebook.com/GreenGravelComedyFest" id="facebook" class="icon"><img src="img/facebook_trans.svg" alt="Facebook page" /></a>
+            <a href="https://twitter.com/GreenGravelFest" id="twitter" class="icon"><img src="/img/twitter_trans.svg" alt="@GreenGravelFest Twitter page" /></a>
+            <a href="https://www.facebook.com/GreenGravelComedyFest" id="facebook" class="icon"><img src="/img/facebook_trans.svg" alt="Facebook page" /></a>
         </div>
         <nav id="navMain">
             <ul class="group">
-                <li data-type="link"><a href="#tickets">Buy Tickets</a></li>
-                <li data-type="link"><a href="#schedule">Schedule</a></li>
-                <li data-type="link"><a href="#submissions">Submissions</a></li>
-                <li><a href="#" class="logotype pulse">Green Gravel Comedy Festival</a></li>
-                <li data-type="link"><a href="#updates">News &amp; Updates</a></li>
-                <li data-type="link"><a href="#about">Festival Info</a></li>
-                <li data-type="link"><a href="#donate">Donate</a></li>
+                <li data-type="link"><a href="#tickets" data-scroll="tickets">Buy Tickets</a></li>
+                <li data-type="link"><a href="#schedule" data-scroll="schedule">Schedule</a></li>
+                <li data-type="link"><a href="#submissions" data-scroll="submissions">Submissions</a></li>
+                <li><a class="logotype pulse">Green Gravel Comedy Festival</a></li>
+                <li data-type="link"><a href="#updates" data-scroll="updates">News &amp; Updates</a></li>
+                <li data-type="link"><a href="#about" data-scroll="about">Festival Info</a></li>
+                <li data-type="link"><a href="#donate" data-scroll="donate">Donate</a></li>
             </ul>
         </nav>
-    </header>
+    </header><!-- /header -->
             
     <section id="home">
+        
+        <a href="#donate" id="donateButton">Donate!</a>
         
         <article class="wrapper">
             
             <div class="branding">
-                <object data="img/newbanner.svg" type="image/svg+xml" class="chart">
+                <img src="img/newbanner.svg"/>
+            </div>
+            
+                <!--<object data="img/newbanner.svg" type="image/svg+xml" class="chart">
                         <!--[if lte IE 8 ]-->
                         <img src="flickr-icon-fallback.png" alt="Flickr Icon">
                         <!--[endif]-->
-                </object>
-            </div>
-            
-            <strong>SCROLL</strong>
-                        
+                <!--</object>-->
+
         </article>
             
     </section><!-- /home -->
@@ -69,17 +71,19 @@
         <h2 class="altgreen">Updates</h2>
         
         <article class="wrapper group">
-            <img src="/img/dork_forest.jpg" />
+            <img src="img/dork_forest.jpg" />
+            <h4>Fundraising / First Headliner!</h4>
+            <time>January 6, 2014</time>
             <p>Thanks to everybody who pitched in for our IndieGoGo campaign and made it a success! We are extremely humbled to be given contributions from comedy fans all over the country and can’t wait to put those funds to work!</p>
 
             <p>We’re proud to announce our very first headliner: <strong>Jackie Kashian</strong>! Jackie is bringing her incredible stand-up and geek-tastic podcast The Dork Forest to Green Gravel! She's appeared on "Conan", "This American Life" and many more!</p>
             
-            <p><strong>WE’RE NOW ACCEPTING SUBMISSIONS</strong> for stand-up, sketch, improv and podcasts, in addition to comedy shorts. Please see our “Submit” page and our Facebook page for details! </p>
+            <p><strong>WE’RE NOW ACCEPTING <a href="#submissions">SUBMISSIONS</a></strong> for stand-up, sketch, improv and podcasts, in addition to comedy shorts. Please see our “Submit” page and our Facebook page for details! </p>
         </article>
     
-    </section>
+    </section><!-- /updates -->
                     
-    <section id="about">
+    <section id="about" class="noiseBG">
         
         <h2>Festival Info</h2>
         
@@ -102,10 +106,11 @@
                 <a href="lee@greengravelcomedyfest.com" class="block">lee@greengravelcomedyfest.com</a>
                 <a href="evan@greengravelcomedyfest.com" class="block">evan@greengravelcomedyfest.com</a>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <h4>Press</h4>
                 <a href="press@greengravelcomedyfest.com" class="block">press@greengravelcomedyfest.com</a>
-                
+                <h4>Submissions</h4>
+                <a href="submissions@greengravelcomedyfest.com" class="block">submissions@greengravelcomedyfest.com</a>
             </div>
             
         </article>
@@ -119,7 +124,7 @@
         <div id="venues-slider">
             <ul class="slides-container">
                 <li>
-                    <img src="img/theatre_classic.jpg"/>
+                    <img src="img/theatre_classic2.jpg"/>
                     <h4>The Wieting Theatre<address>101 S Church St, Toledo, IA 52342</address></h4>
                     <article>
                         <p>The lovely Wieting Theater serves as the primary venue for Green Gravel. The Wieting has brought fine arts ranging from live opera to 3D movies to the Toledo region since 1912. This 300-seat balcony-tiered gem has been restored and maintained by the community, showcasing the tireless work and cultural heritage of the people of Toledo. We’re honored to host our event here and can’t wait to share this completely unique live, hilarious experience with you!</p>
@@ -129,7 +134,7 @@
                     <img src="img/bumblebees.jpg"/>
                     <h4>Bumblebee's<address>112 N Broadway St, Toledo, IA 52342</address></h4>
                     <article>
-                        <p>Just down the block from The Wieting Theater, across from the Tama County courthouse, sits a local institution for gourmet pizza, quality karaoke and late-night spirits for locals and visitors alike. This first-generation pool hall has been the hitching post for many a weary worker for over 2 decades and is owned/operated with pride by the Musgrave family. Bumblebee’s will be hosting comedy events in conjunction with those at the Wieting and a third venue to be announced.</p>
+                        <p>Just down the block from The Wieting Theater, across from the Tama County courthouse, sits a local institution for gourmet pizza, quality karaoke and late-night spirits for locals and visitors alike. This first-generation pool hall has been the hitching post for many a weary worker for over 2 decades and is owned/operated with pride by the Musgrave family. Bumblebee’s will be hosting comedy events in conjunction with those at the Wieting and the American Legion Post 72.</p>
                     </article>
                 </li>
                 <li>
@@ -148,12 +153,8 @@
         </div><!-- /venues-slider -->
 
     </section><!-- /venues -->
-    
-    <section id="schedule">
         
-    </section>
-    
-    <section id="lineup">
+    <section id="lineup" class="noiseBG">
         
         <h2>Lineup</h2>
         
@@ -165,7 +166,7 @@
             
         </article>
         
-    </section>
+    </section><!-- /lineup -->
     
     <section id="workshops">
         
@@ -181,7 +182,7 @@
             
         </article>
         
-    </section>
+    </section><!-- /workshops -->
     
     <section id="submissions">
         
@@ -199,76 +200,49 @@
             
         </article>
 
-    </section>
+    </section><!-- /submissions -->
     
-    <section id="staff">
+    <section id="staff" class="noiseBG">
         
         <h2>Staff</h2>
         
-        <article class="wrapper group">
-                                    
-            <div id="keelerBio" class="staffBio floatRight group">
-                <div class="photoID">
+        <article class="wrapper">
+            
+            <ul>
+                <li id="keeler">
                     <img src="img/staff_lee.png" />
-                    <h4><strong>Lee Keeler</strong><br/>Festival President</h4>
-                </div>
-                <p>Born and raised in Sioux City, Lee is a comedy writer and producer living in Los Angeles. He received his MFA in Dramatic Writing with honors from the Savannah College of Art and Design. He has written for ScreenJunkies.com, The Devastator Quarterly, Crave Comedy Online and more; this work has turned up in places like The A.V. Club, The Huffington Post and /Film. Keeler produces and hosts The Hour of Power Hour, a monthly comedy variety event at the Improv Hollywood that regularly sells out. The show has consistently boasted some of the finest voices in comedy today, including TJ Miller, Kyle Kinane, David Spade, Greg Proops, Paul Scheer, Maria Bamford and many more.</p>
-            </div>
-
-            <div id="mesarosBio" class="staffBio floatLeft group">
-                <div class="photoID">
+                    <h5><strong>Lee Keeler</strong><br/>Festival President</h5>
+                </li>
+                <li id="mesaros">
                     <img src="img/staff_matt.png" />
-                    <h4><strong>Matthew Mesaros</strong><br/>Vice President</h4>
-                </div>
-                <p class="floatRight">Matthew hails from Savannah, Georgia but has made his home in Iowa City, Iowa as a web developer, writer, designer and pool junkie. He currently attends the University of Iowa pursuing a BFA in Graphic Design while working for Epiphany Design Co, a local web development startup. He has written film reviews for the local Iowa City monthly "Little Village" and he is also the founder, designer and curator of Cinelogue, an online film essay journal. He is a dedicated Atlanta Braves fan and occasionally performs pieces for 12 string guitar around town.</p>
-            </div>
-
-            
-            <div id="watkinsBio" class="staffBio floatRight group">
-                <div class="photoID">
+                    <h5><strong>Matthew Mesaros</strong><br/>Vice President</h5>
+                </li>
+                <li id="watkins">
                     <img src="img/staff_evan.png"/>
-                    <h4><strong>Evan Watkins</strong><br/>Festival Coordinator</h4>
-                </div>
-                <p>Ohio born Evan Watkins is a comedy content producer based in Los Angeles. He's quickly made a name for himself producing video content for The Laugh Factory comedy club's online markets. He's had a hand in creating various sketches, podcasts and stand-up clips, working alongside comedians such as Dom Irrera, Adam Ray, Finesse Mitchell and many more. As for live comedy, he wrote and produced a year-long run of a successful standup and sketch show, "Comedy Slice" at the Hollywood Improv club. He is currently a sketch comedy writer and performer at the Improv Olympic West Theater, an avid hockey fan, and podcaster. His Pittsburgh themed Yinzcast can be found on iTunes.</p>
-            </div><!-- /staffMember Watkins -->
-            
-            <div id="eadonBio" class="staffBio floatLeft group">
-                <div class="photoID">
+                    <h5><strong>Evan Watkins</strong><br/>Festival Coordinator</h5>
+                </li>
+                <li id="eadon">
                     <img src="img/staff_derek.png"/>
-                    <h4><strong>Derek Eadon</strong><br/>Festival Coordinator</h4>
-                </div>
-                <p>Derek Eadon is a political and public affairs strategist from West Des Moines, IA. Derek has worked for political campaigns, non-profits, and large businesses. He specializes in organization building, integrated planning, and event management. Derek has led efforts on hundreds of events including: the 2013 Harkin Steak Fry, Barack Obama’s 2009 Inauguration, and Barack Obama’s 2012 3-day bus tour of Iowa.</p>
-            </div><!-- /staffMember Eadon -->
+                    <h5><strong>Derek Eadon</strong><br/>Festival Coordinator</h5>
+                </li>
+            </ul>
 
         </article>
     
     </section><!-- /staff -->
     
-    <section id="donate">
-        
-        <h2 class="altgreen">Donate</h2>
-    
-        <article class="wrapper">
-    
-            <p>Maybe you weren’t able to contribute to our IndieGoGo campaign a while back? Hopefully you’re feeling warm and fuzzy about us offering a free stand-up workshop along and a free headliner Q&amp;A and want to help. Each and every dollar you contribute goes towards keeping the gravel green and fostering the growth of comedy in Iowa! Do your part! Please and thank you.</p>
-
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="3GRJJGV6XYKWN">
-                <input class="form_button" name="submit" type="submit" value="Paypal" alt="PayPal - The safer, easier way to pay online!">
-            </form>
-            
-        </article>
-
-    </section><!-- /donate -->
-    
     <section id="sponsors">
         
         <h2 class="altgreen">Sponsors</h2>
-    
+        
+        <article class="wrapper">
+            <p>We’re proud to be partnering with businesses in the Central Iowa region and beyond to deliver a fest experience that will make your gravel strip comedy trip one to remember!</p>
+            <p><strong>The Super 8 in Toledo</strong> is offering Green Gravel ticket holders an exclusive rate of $65 per night! Simply contact their office at (641) 484-5888, reserve your room and provide proof of purchase at check-in and get ready to laugh!</p>
+        </article>
+            
         <ul>
             <li>
-                <img src="img/maxames_icon.svg"/>
+                <img src="img/maxames_icon.png"/>
                 <span>Maximum Ames</span>
             </li>
             <li>
@@ -276,7 +250,7 @@
                 <span>The Devastator</span>
             </li>
             <li>
-                <img src="img/super8_icon.svg"/><br/>
+                <img src="img/super8_icon.png"/><br/>
                 <span>Super 8 Motels</span>
             </li>
             <li>
@@ -288,17 +262,34 @@
                 <span>Bluprint Strategies</span>
             </li>
             <li>
-                <img src="img/weiting_icon.svg"/>
+                <img src="img/weiting_icon.png"/>
                 <span>The Weiting Opera House</span>
             </li>
         </ul>
-        
-        <article class="wrapper">
-            <p>We’re proud to be partnering with businesses in the Central Iowa region and beyond to deliver a fest experience that will make your gravel strip comedy trip one to remember!</p>
-            <p>The Super 8 in Toledo is offering Green Gravel ticket holders an exclusive rate of $65 per night! Simply contact their office at (641) 484-5888, reserve your room and provide proof of purchase at check-in and get ready to laugh!</p>
-        </article>
     
     </section><!-- /sponsors -->
+    
+    <section id="donate">
+        
+        <h2 class="altgreen">Donate</h2>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="3GRJJGV6XYKWN">
+            <input class="form_button" name="submit" type="submit" value="Paypal" alt="PayPal - The safer, easier way to pay online!">
+            <img src="img/creditcards.png"/>
+        </form>
+        
+        <article class="wrapper">
+            <p>Maybe you weren’t able to contribute to our IndieGoGo campaign a while back? Hopefully you’re feeling warm and fuzzy about us offering a free stand-up workshop along and a free headliner Q&amp;A and want to help. Each and every dollar you contribute goes towards keeping the gravel green and fostering the growth of comedy in Iowa! Do your part! Please and thank you.</p>
+        </article>
+
+    </section><!-- /donate -->
+    
+    <a href="#" id="backToTop"></a>
+    
+    <footer>
+    </footer>
         
 <!-- (ʃ) -->
 </body>
